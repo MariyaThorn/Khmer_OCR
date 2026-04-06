@@ -1,0 +1,6 @@
+torch>=2.0.0
+torchvision>=0.15.0
+pandas>=2.0.0
+pyarrow>=12.0.0      # parquet support for pandas
+Pillow>=10.0.0
+python-Levenshtein>=0.21.0   # fast CER/WER computation
