@@ -39,7 +39,7 @@ Image (grayscale, H=32, variable W)
 ## Project Structure
 
 ```
-khmer_ocr/
+OCR/
 ├── data/
 │   ├── train.parquet         ← your training data goes here
 │   ├── val.parquet           ← your validation/test data goes here
@@ -53,7 +53,8 @@ khmer_ocr/
 ├── interactive_predict.py    # load model once, predict images interactively
 ├── evaluate.py               # standalone evaluation on val.parquet
 ├── predict.py                # inference on images or parquet
-└── requirements.txt
+├── requirements.txt
+└── README.md
 ```
 
 ---
@@ -63,7 +64,6 @@ khmer_ocr/
 ### Step 1 — Install dependencies
 
 ```bash
-cd khmer_ocr
 pip install -r requirements.txt
 ```
 
@@ -73,7 +73,7 @@ Copy your parquet files into the `data/` folder:
 
 ```
 khmer_ocr/
-└── data/
+OCR
     ├── train.parquet
     └── val.parquet
 ```
@@ -100,7 +100,7 @@ print(sorted(chars))
 Before committing to a full training run, verify the model and data load correctly:
 
 ```python
-# Run from the khmer_ocr/ directory
+# Run from the OCR/ directory
 python -c "
 from utils.vocab import CHAR2IDX, NUM_CLASSES
 from data.dataset import build_dataloader
