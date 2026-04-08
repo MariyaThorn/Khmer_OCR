@@ -67,7 +67,7 @@ def greedy_decode(logits):
 def parse_args():
     p = argparse.ArgumentParser(description="Evaluate Khmer OCR")
     p.add_argument("--checkpoint",    required=True)
-    p.add_argument("--val_parquet",   required=True)
+    p.add_argument("--val_full_parquet",   required=True)
     p.add_argument("--batch_size",    type=int, default=32)
     p.add_argument("--num_samples",   type=int, default=10,
                    help="How many sample predictions to print")
@@ -95,7 +95,7 @@ def main():
 
     # ── Data ──────────────────────────────────────────────────────────────────
     loader = build_dataloader(
-        args.val_parquet, CHAR2IDX,
+        args.val_full_parquet, CHAR2IDX,
         batch_size=args.batch_size, img_height=img_height,
         augment=False, shuffle=False, num_workers=args.num_workers,
     )
